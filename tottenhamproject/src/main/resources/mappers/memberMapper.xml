@@ -1,0 +1,109 @@
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="memberMapper">
+<insert id = "register" parameterType = "blog.vo.MemberVO" >
+insert into member(BNO,
+                    mem_id,
+                    mem_pw,
+                    mem_name,
+                    mem_birth,
+                    mem_email,
+                    mem_phone,
+                    mem_gender,
+                    mem_oaddress,
+                    mem_address,
+                    mem_detailaddress)
+values(member_SEQ.NEXTVAL,
+#{mem_id},
+#{mem_pw},
+#{mem_name},
+#{mem_birth},
+#{mem_email},
+#{mem_phone},
+#{mem_gender},
+#{mem_oaddress},
+#{mem_address},
+#{mem_detailaddress})
+</insert>
+
+<select id = "memberList" resultType="blog.vo.MemberVO">
+SELECT 
+BNO,
+mem_id,
+mem_pw,
+mem_name,
+mem_birth,
+mem_email,
+mem_phone,
+mem_gender,
+mem_oaddress,
+mem_address,
+mem_detailaddress
+FROM member
+ORDER BY BNO DESC
+</select>
+
+<!-- 로그인 -->
+<select id="login" resultType="blog.vo.MemberVO">
+ select
+     mem_id,mem_pw,mem_name,mem_birth,mem_email,mem_phone,mem_gender,mem_oaddress,mem_address,mem_detailaddress
+ from
+     member
+ where mem_id = #{mem_id}
+     and mem_pw = #{mem_pw} 
+</select>
+
+<!-- 회원정보수정 -->
+<update id = "memberUpdate">
+UPDATE member SET
+mem_pw = #{mem_pw},
+mem_name = #{mem_name},
+mem_birth = #{mem_birth},
+mem_email = #{mem_email},
+mem_phone = #{mem_phone},
+mem_gender = #{mem_gender},
+mem_oaddress = #{mem_oaddress},
+mem_address = #{mem_address},
+mem_detailaddress = #{mem_detailaddress}
+WHERE mem_id = #{mem_id}
+</update>
+
+<!-- 회원탈퇴 -->
+	<delete id="memberDelete">
+		DELETE FROM member
+		WHERE mem_id = #{mem_id}
+		and mem_pw = #{mem_pw}
+	</delete>
+	
+	<!-- 패스워드 체크 -->
+	<select id="passChk" resultType="int">
+		SELECT COUNT(*) FROM member
+		WHERE mem_id = #{mem_id}
+		 and mem_pw = #{mem_pw}
+	</select>
+
+<!-- 아이디 중복 체크 -->
+<select id="idChk" resultType="int">
+	SELECT COUNT(*) FROM member
+	WHERE mem_id = #{mem_id}
+</select>
+
+<!-- 관리자 버튼한번으로 삭제 -->
+<delete id="delete">
+		DELETE 
+		  FROM member
+		 WHERE BNO = #{bno}
+	</delete>
+
+
+
+
+
+
+
+
+
+
+
+</mapper>
