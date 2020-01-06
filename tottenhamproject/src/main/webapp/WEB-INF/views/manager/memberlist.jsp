@@ -19,6 +19,7 @@ font-size: 15pt;
 form,table,div{
     font-family: 'Sunflower', sans-serif;
 	}
+
 </style>
 </head>
 
@@ -33,7 +34,7 @@ form,table,div{
 			<h1>회원 목록</h1>
 		</header>
     <section id="container">
-	<form name="readForm" role="form" method="post">
+	<form name="readForm" role="form" method="get">
     <table class="table table-hover" border = "1"  >
     <tr>
     <th>회원번호</th>
@@ -62,6 +63,48 @@ form,table,div{
     </tr>
     </c:forEach>
     </table>
+    <div class="search row">
+    <div class="col-xs-2 col-sm-2">
+    <select name="searchType" class="form-control">
+      <option value="n"<c:out value="${scri.searchType == null ? 'selected' : ''}"/>>-----</option>
+      <option value="i"<c:out value="${scri.searchType eq 'i' ? 'selected' : ''}"/>>아이디</option>
+      <option value="n"<c:out value="${scri.searchType eq 'n' ? 'selected' : ''}"/>>이름</option>
+      <option value="b"<c:out value="${scri.searchType eq 'b' ? 'selected' : ''}"/>>회원번호</option>
+    </select>
+    </div>
+
+   <div class="col-xs-10 col-sm-10">
+						<div class="input-group">
+							<input type="text" name="keyword" id="keywordInput"
+								value="${scri.keyword}" class="form-control" /> <span
+								class="input-group-btn">
+								<button id="searchBtn" type="button" class="btn btn-default">검색</button>
+							</span>
+						</div>
+					</div>
+    <script>
+      $(function(){
+        $('#searchBtn').click(function() {
+          self.location = "memberlist" + '${pageMaker.makeQuery(1)}' + "&searchType=" + $("select option:selected").val() + "&keyword=" + encodeURIComponent($('#keywordInput').val());
+        });
+      });   
+    </script>
+  </div>
+    <div class="col-md-offset-3">
+  <ul class="pagination">
+    <c:if test="${pageMaker.prev}">
+    	<li><a href="list${pageMaker.makeSearch(pageMaker.startPage - 1)}">이전</a></li>
+    </c:if> 
+
+    <c:forEach begin="${pageMaker.startPage}" end="${pageMaker.endPage}" var="idx">
+    	<li><a href="list${pageMaker.makeSearch(idx)}">${idx}</a></li>
+    </c:forEach>
+
+    <c:if test="${pageMaker.next && pageMaker.endPage > 0}">
+    	<li><a href="list${pageMaker.makeSearch(pageMaker.endPage + 1)}">다음</a></li>
+    </c:if> 
+  </ul>
+</div>
     </form>
     </section>
     

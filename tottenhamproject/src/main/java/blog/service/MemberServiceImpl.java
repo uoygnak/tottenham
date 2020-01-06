@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import blog.dao.MemberDAO;
+import blog.vo.Criteria;
 import blog.vo.MemberVO;
 import blog.vo.SearchCriteria;
 
@@ -59,14 +60,20 @@ public class MemberServiceImpl implements MemberService {
 
 	// 회원정보조회 ㅋ
 	@Override
-	public List<MemberVO> memberList() throws Exception {
-		return dao.memberList();
+	public List<MemberVO> memberList(SearchCriteria scri) throws Exception {
+		return dao.memberList(scri);
 	}
 
 	// 관리자 버튼한방 삭제
 	@Override
 	public void delete(int bno) throws Exception {
 		dao.delete(bno);
+	}
+
+	// 회원수
+	@Override
+	public int listCount(SearchCriteria scri) throws Exception {
+		return dao.listCount(scri);
 	}
 
 }

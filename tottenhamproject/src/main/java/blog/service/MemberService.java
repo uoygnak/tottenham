@@ -2,6 +2,7 @@ package blog.service;
 
 import java.util.List;
 
+import blog.vo.Criteria;
 import blog.vo.MemberVO;
 import blog.vo.SearchCriteria;
 
@@ -26,7 +27,10 @@ public interface MemberService {
 	public int idChk(MemberVO vo) throws Exception;
 
 	// 회원목록 조회
-	public List<MemberVO> memberList() throws Exception;
+	public List<MemberVO> memberList(SearchCriteria scri) throws Exception;
+	
+	// 회원수 
+	public int listCount(SearchCriteria scri) throws Exception;
 
 	// 관리자 버튼 한번으로 삭제
 	public void delete(int bno) throws Exception;

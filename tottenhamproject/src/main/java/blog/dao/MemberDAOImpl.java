@@ -8,7 +8,7 @@ import org.apache.ibatis.session.SqlSession;
 
 import org.springframework.stereotype.Repository;
 
-
+import blog.vo.Criteria;
 import blog.vo.MemberVO;
 import blog.vo.SearchCriteria;
 
@@ -57,14 +57,21 @@ public class MemberDAOImpl implements MemberDAO {
 	
 	// 회원 목록 조회
 	@Override
-	public List<MemberVO> memberList() throws Exception {
-		return sql.selectList("memberMapper.memberList");
+	public List<MemberVO> memberList(SearchCriteria scri) throws Exception {
+		return sql.selectList("memberMapper.memberList", scri);
 	}
+
 	
 	// 관리자 버튼한번 삭제
 	@Override
 	public void delete(int bno) throws Exception {
 		sql.delete("memberMapper.delete", bno);
+	}
+	
+	// 회원수
+	@Override
+	public int listCount(SearchCriteria scri) throws Exception {
+		return sql.selectOne("memberMapper.listCount", scri);
 	}
 	
 

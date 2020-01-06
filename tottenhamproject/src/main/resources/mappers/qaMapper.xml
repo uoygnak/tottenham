@@ -4,17 +4,21 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="qaMapper">
 	<!-- 게시판 글 작성 -->
-	<insert id="insert">
+<insert id="insert" parameterType="blog.vo.QaVO" useGeneratedKeys="true" keyProperty="bno">
+	    <selectKey keyProperty="bno" resultType="int" order="BEFORE">
+	    	SELECT MP_QA_SEQ.NEXTVAL FROM DUAL
+	    </selectKey>
 	    INSERT INTO MP_QA(    BNO 
 	   					       , TITLE 
 	   					       , CONTENT 
 	   					       , WRITER  )
-	                  VALUES(    MP_QA_SEQ.NEXTVAL 
+	                  VALUES(    #{bno}
 	                 		   , #{title}
 	                 		   , #{content}
 	                 		   , #{writer}  )
    
     </insert>
+    
    
 	<select id="listPage" resultType="blog.vo.QaVO" parameterType="blog.vo.SearchCriteria">
 		SELECT  BNO, 
@@ -77,4 +81,18 @@
 		 WHERE BNO = #{bno}
 	</delete>
    
+
 </mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+

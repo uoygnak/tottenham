@@ -115,7 +115,9 @@ form{
 									pattern="yyyy-MM-dd" /></td>
 						</tr>
 					</c:forEach>
+					<c:if test="${member.mem_id == 'admin'}">
 					<li><a href="/news/writeView">글 작성</a></li>
+					</c:if>
 				</table>
 				<div class="search row">
 					<div class="col-xs-2 col-sm-2">

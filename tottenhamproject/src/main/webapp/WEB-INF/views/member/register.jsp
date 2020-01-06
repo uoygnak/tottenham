@@ -13,7 +13,7 @@
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 		<!-- 부가적인 테마 -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
-		
+		<link href="https://fonts.googleapis.com/css?family=Sunflower:300&display=swap&subset=korean" rel="stylesheet">
 		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 <!-- daum 도로명 주소 찾기 api -->
@@ -24,6 +24,12 @@ td {
 border:1px solid #000000;
 border-collapse:collapse;
 }
+section{
+font-size: 15pt;
+}
+form,table,div{
+    font-family: 'Sunflower', sans-serif;
+	}
 </style>
 
 <script type ="text/javascript">
