@@ -8,14 +8,10 @@
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 <!-- 부가적인 테마 -->
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
-
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
 <script
 	src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<link
-	href="https://fonts.googleapis.com/css?family=Sunflower:300&display=swap&subset=korean"
-	rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
 <script src="/resources/ckeditor/ckeditor.js"></script>
 
 <title>구매게시판</title>
@@ -26,7 +22,7 @@ section {
 }
 
 form, table, div {
-	font-family: 'Sunflower', sans-serif;
+	font-family: 'Noto Sans KR', sans-serif;
 }
 </style>
 </head>
@@ -80,10 +76,11 @@ form, table, div {
 		</div>
 		<br>
 		<br>
+		<br>
 		<header>
 			<h1>게시글 수정</h1>
 		</header>
-
+        <br>
 		<section id="container">
 			<form name="updateForm" role="form" method="post"
 				onsubmit="return chkSubmit()" action="/buy/update">
@@ -140,15 +137,15 @@ form, table, div {
 							</div>
 							<tr>
 								<td><label for="regdate">작성날짜</label> <fmt:formatDate
-										value="${update.regdate}" pattern="yyyy-MM-dd" /></td>
+										value="${update.regdate}" pattern="yy-MM-dd" /></td>
 							</tr>
 					</tbody>
 				</table>
 				<div class="form-group">
 					<div class="center-block" style='width: 200px'>
-						<button class="write_btn  btn btn-success update_btn"
+						<button class="btn btn-default update_btn"
 							type="submit">수정</button>
-						<button class="write_btn  btn btn-danger  cancel_btn"
+						<button class="btn btn-default  cancel_btn"
 							type="button">취소</button>
 					</div>
 				</div>

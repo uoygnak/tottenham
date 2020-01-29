@@ -12,17 +12,17 @@
 <!-- 부가적인 테마 -->
 <link rel="stylesheet"	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
 <script	src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<link href="https://fonts.googleapis.com/css?family=Sunflower:300&display=swap&subset=korean" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
 <style>
 .floating {
 	background-color: #f9f9f9;
-	border: 2px solid #000;
+	border: 1px solid #b1b1b1;
 	position: fixed;
 	right: 50%;
-	top: 110px;
-	margin-right: -900px;
+	top: 140px;
+	margin-right: -970px;
 	text-align: center;
-	width: 200px;
+	width: 150px;
 	border-radius: 8px;
 	-webkit-border-radius: 8px;
 }
@@ -43,44 +43,50 @@
 	border-radius: 8px;
 }
 form{
-    font-family: 'Sunflower', sans-serif;
+     font-family: 'Noto Sans KR', sans-serif;
 	font-size : 20px;
 	}
 	table{
-	font-family: 'Sunflower', sans-serif;
+	 font-family: 'Noto Sans KR', sans-serif;
 	font-size : 20px;
 	}
 	div{
-	font-family: 'Sunflower', sans-serif;
+	 font-family: 'Noto Sans KR', sans-serif;
+	}
+	#players {
+	text-align:center;
+	}
+	h4{
+	text-align:center;
+	}
+	.sqd{
+	width: 1500px;
+	height: 250px;
 	}
 </style>
 </head>
 <%@include file="/WEB-INF/views/nav.jsp"%>
 <body>
+	<br><br><br>
 	<div class="floating">
-		<h2>공식 채널</h2>
-		<br> <a
-			href='https://www.youtube.com/channel/UCEg25rdRZXg32iwai6N6l0w'
-			target='_blank'>
-			<div>
-				<img src='/resources/img/banner/유튜브로고.png' />
-			</div>
-		</a> <br> <a href='https://www.instagram.com/spursofficial/?hl=ko'
-			target='_blank'>
-			<div>
-				<img src='/resources/img/banner/인스타로고.png' />
-			</div>
-		</a> <br> <a href='https://ko-kr.facebook.com/TottenhamHotspur/'
-			target='_blank'>
-			<div>
-				<img src='/resources/img/banner/페이스북로고.png' />
-			</div>
-		</a> <br> <a href='https://www.tottenhamhotspur.com/kr/'
-			target='_blank'>
-			<div>
-				<img src='/resources/img/banner/토트넘로고.png' />
-			</div>
+	<h3>Official</h3>
+	    <br>
+	    <a href='https://www.youtube.com/channel/UCEg25rdRZXg32iwai6N6l0w' target='_blank'>
+		<div id = "img1"><img src='/resources/img/banner/youtube_grey.png' onmouseover="this.src='/resources/img/banner/youtube_color.png'" onmouseout="this.src='/resources/img/banner/youtube_grey.png'" /> </div>
 		</a>
+		<br>
+		 <a href='https://www.instagram.com/spursofficial/?hl=ko' target='_blank'>
+		<div id = "img2"><img src='/resources/img/banner/instagram_grey.png' onmouseover="this.src='/resources/img/banner/instagram_color.png'" onmouseout="this.src='/resources/img/banner/instagram_grey.png'" /> </div>
+		</a>
+		<br>
+		 <a href='https://ko-kr.facebook.com/TottenhamHotspur/' target='_blank'>
+		<div id = "img3"><img src='/resources/img/banner/facebook_grey.png' onmouseover="this.src='/resources/img/banner/facebook_color.png'" onmouseout="this.src='/resources/img/banner/facebook_grey.png'" /> </div>
+		</a>
+		<br>
+		 <a href='https://www.tottenhamhotspur.com/kr/' target='_blank'>
+		<div id = "img4"><img src='/resources/img/banner/tottenham_grey.png' onmouseover="this.src='/resources/img/banner/tottenham_color.png'" onmouseout="this.src='/resources/img/banner/tottenham_grey.png'" /> </div>
+		</a>
+		<br>
 	</div>
 
 	<br>
@@ -90,28 +96,29 @@ form{
 	<br>
 	<br>
 	<br>
+			<div class="form-group">
+				<img class="sqd"src="/resources/img/선수단정보.png" style="margin-left: auto; margin-right: auto; display: block;">
+			</div>
 	<div class="container">
 		<br>
 		<br>
 		<section id="container">
-			<div class="form-group">
-				<img src="/resources/img/player/퍼스트팀.jpg">
-			</div>
 		</section>
-		<h2>클릭 시 상세정보로 넘어갑니다.</h2>
+		           <h4>클릭 시 상세정보로 넘어갑니다.</h4>
 		<br>
 		<br>
 		<br>
 		<br>
 		<br>
 		<br>
+		<div id="players" >
 		<section id="container">
 			<div class="form-group">
 				<a
 					href="https://namu.wiki/w/%EC%9C%84%EA%B3%A0%20%EC%9A%94%EB%A6%AC%EC%8A%A4"><img
 					src="/resources/img/player/1요리스.jpg"></a> <a
 					href="https://namu.wiki/w/%EB%8C%80%EB%8B%88%20%EB%A1%9C%EC%A6%88"><img
-					src="/resources/img/player/2로즈.jpg"></a> <a
+					src="/resources/img/player/2로즈.jpg" ></a> <a
 					href="https://namu.wiki/w/%ED%86%A0%EB%B9%84%20%EC%95%8C%EB%8D%B0%EB%A5%B4%EB%B2%A0%EC%9D%B4%EB%9F%B4%ED%8A%B8"><img
 					src="/resources/img/player/3토비알더.jpg"></a>
 			</div>
@@ -243,6 +250,10 @@ form{
 			</div>
 		</section>
 	</div>
+	</div>
+	<br><br><br>
+	<br><br><br>
+	<br><br><br>
 	<!-- footer -->
 	<div class="jumbotron text-center mt-5 mb-0">
 		<h3 class="text-secondary">Tottenham Hotspur Football Club</h3>

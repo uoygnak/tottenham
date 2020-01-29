@@ -13,7 +13,7 @@
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 		<!-- 부가적인 테마 -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
-		<link href="https://fonts.googleapis.com/css?family=Sunflower:300&display=swap&subset=korean" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
 		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 <!-- daum 도로명 주소 찾기 api -->
@@ -28,7 +28,7 @@ section{
 font-size: 15pt;
 }
 form,table,div{
-    font-family: 'Sunflower', sans-serif;
+     font-family: 'Noto Sans KR', sans-serif;
 	}
 </style>
 
@@ -455,7 +455,7 @@ function fn_idChk(){
 <label for = "id">아이디</label>
 <input type="text" class="form-control" id = "mem_id" name= "mem_id" 
 placeholder="ID"> 
-<button class="idChk" type="button" id="idChk" onclick="fn_idChk();" value="N">중복확인</button>
+<button class="idChk btn btn-default" type="button" id="idChk" onclick="fn_idChk();" value="N">중복확인</button>
 <div class = "check_font" id = "id_check"></div>
 </div>
 
@@ -531,8 +531,8 @@ id="mem_detailaddress" type="text" />
 </div>
 
 <div class="form-group text-center">
-<button id="submit" type="submit" class = "btn btn-primary" >회원가입</button>
-<a href="javascript:history.back()" class="cencle btn btn-danger">취소</a>
+<button id="submit" type="submit" class = "btn btn-default" >회원가입</button>
+<a href="javascript:history.back()" class="cencle btn btn-default">취소</a>
 </div>
 </form>
 </div>

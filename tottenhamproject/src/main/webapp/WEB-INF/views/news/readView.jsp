@@ -8,19 +8,19 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 <!-- 부가적인 테마 -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
-<link href="https://fonts.googleapis.com/css?family=Sunflower:300&display=swap&subset=korean" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <title>뉴스</title>
 <style>
 .floating {
 	background-color: #f9f9f9;
-	border: 2px solid #000;
+	border: 1px solid #b1b1b1;
 	position: fixed;
 	right: 50%;
-	top: 110px;
-	margin-right: -900px;
+	top: 140px;
+	margin-right: -970px;
 	text-align: center;
-	width: 200px;
+	width: 150px;
 	border-radius: 8px;
 	-webkit-border-radius: 8px;
 }
@@ -50,15 +50,15 @@ font-size: 15pt;
 }
 
 form{
-    font-family: 'Sunflower', sans-serif;
+    font-family: 'Noto Sans KR', sans-serif;
 	font-size : 20px;
 	}
 	table{
-	font-family: 'Sunflower', sans-serif;
+	font-family: 'Noto Sans KR', sans-serif;
 	font-size : 20px;
 	}
 	div{
-	font-family: 'Sunflower', sans-serif;
+	font-family: 'Noto Sans KR', sans-serif;
 	}
 	#content img { max-width:1500px; height:auto; }
 </style>
@@ -112,24 +112,26 @@ form{
 </script>
 
 <body>
+<br><br><br>
 <div class="floating">
-	<h2>공식 채널</h2>
+	<h3>Official</h3>
 	    <br>
 	    <a href='https://www.youtube.com/channel/UCEg25rdRZXg32iwai6N6l0w' target='_blank'>
-		<div><img src='/resources/img/banner/유튜브로고.png' /> </div>
+		<div id = "img1"><img src='/resources/img/banner/youtube_grey.png' onmouseover="this.src='/resources/img/banner/youtube_color.png'" onmouseout="this.src='/resources/img/banner/youtube_grey.png'" /> </div>
 		</a>
 		<br>
 		 <a href='https://www.instagram.com/spursofficial/?hl=ko' target='_blank'>
-		<div><img src='/resources/img/banner/인스타로고.png' /> </div>
+		<div id = "img2"><img src='/resources/img/banner/instagram_grey.png' onmouseover="this.src='/resources/img/banner/instagram_color.png'" onmouseout="this.src='/resources/img/banner/instagram_grey.png'" /> </div>
 		</a>
 		<br>
 		 <a href='https://ko-kr.facebook.com/TottenhamHotspur/' target='_blank'>
-		<div><img src='/resources/img/banner/페이스북로고.png' /> </div>
+		<div id = "img3"><img src='/resources/img/banner/facebook_grey.png' onmouseover="this.src='/resources/img/banner/facebook_color.png'" onmouseout="this.src='/resources/img/banner/facebook_grey.png'" /> </div>
 		</a>
 		<br>
 		 <a href='https://www.tottenhamhotspur.com/kr/' target='_blank'>
-		<div><img src='/resources/img/banner/토트넘로고.png' /> </div>
+		<div id = "img4"><img src='/resources/img/banner/tottenham_grey.png' onmouseover="this.src='/resources/img/banner/tottenham_color.png'" onmouseout="this.src='/resources/img/banner/tottenham_grey.png'" /> </div>
 		</a>
+		<br>
 	</div>
 <br><br><br>
 	<div class="container">
@@ -184,12 +186,11 @@ form{
 			 
 			 <c:if test="${member.mem_id == 'admin'}">
 				<div>
-					<button type="button" class="update_btn btn btn-warning">수정</button>
-					<button type="button" class="delete_btn btn btn-danger">삭제</button>
+					<button type="button" class="update_btn btn btn-default">수정</button>
+					<button type="button" class="delete_btn btn btn-default">삭제</button>
+			</c:if>			
+			<button type="button" class="list_btn btn btn-default">목록</button>
 				</div>
-			</c:if>
-			
-			<button type="button" class="list_btn btn btn-primary">목록</button>
 			
 			
 		</section>

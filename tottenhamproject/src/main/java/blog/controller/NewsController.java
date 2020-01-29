@@ -35,14 +35,14 @@ private static final Logger logger = LoggerFactory.getLogger(NewsController.clas
 	@Inject
 	Reply5Service reply5Service;
 	
-	// 공지글 글 작성 화면
+	// 뉴스글 글 작성 화면
 	@RequestMapping(value = "/writeView", method = RequestMethod.GET)
 	public void writeView() throws Exception{
 		logger.info("writeView");
 		
 	}
 	
-	// 공지 글 작성
+	// 뉴스 글 작성
 	@RequestMapping(value = "/write", method = RequestMethod.POST)
 	public String write(NewsVO newsVO) throws Exception{
 		logger.info("write");
@@ -52,7 +52,7 @@ private static final Logger logger = LoggerFactory.getLogger(NewsController.clas
 		return "redirect:/news/list";
 	}
 	
-	// 공지글 목록 조회
+	// 뉴스글 목록 조회
 	@RequestMapping(value = "/list", method = RequestMethod.GET)
 	public String list(Model model, @ModelAttribute("scri") SearchCriteria scri) throws Exception{
 		logger.info("list");
@@ -69,7 +69,7 @@ private static final Logger logger = LoggerFactory.getLogger(NewsController.clas
 		
 	}
 	
-	// 공지글 조회
+	// 뉴스글 조회
 	@RequestMapping(value = "/readView", method = RequestMethod.GET)
 	public String read(NewsVO newsVO, @ModelAttribute("scri") SearchCriteria scri, Model model) throws Exception{
 		logger.info("read");
@@ -109,7 +109,7 @@ private static final Logger logger = LoggerFactory.getLogger(NewsController.clas
 		return "redirect:/news/list";
 	}
 
-	// 게시판 삭제
+	// 뉴스 삭제
 	@RequestMapping(value = "/delete", method = RequestMethod.POST)
 	public String delete(NewsVO newsVO, @ModelAttribute("scri") SearchCriteria scri, RedirectAttributes rttr) throws Exception{
 		logger.info("delete");

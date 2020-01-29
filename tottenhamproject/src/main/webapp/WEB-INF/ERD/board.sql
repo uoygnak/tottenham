@@ -18,7 +18,7 @@ drop table MULTIMEDIA;
 /* Drop Sequences */
 
 DROP SEQUENCE SEQ_mp_menu_mid;
-DROP SEQUENCE MP_reply2_SEQ;
+DROP SEQUENCE MP_reply6_SEQ;
 DROP SEQUENCE SEQ_mp_cell;
 DROP SEQUENCE SEQ_multimedia;
 DROP SEQUENCE SEQ_insa;
@@ -26,7 +26,7 @@ DROP SEQUENCE SEQ_gongji;
 DROP SEQUENCE MP_FILE_NO;
 commit
 
-select * from mp_member;
+select * from member;
 
 /* Create Sequences */
 
@@ -206,6 +206,8 @@ COMMIT;
 COMMIT
 
 -- 댓글 
+
+drop table mp_reply4;
 alter table mp_reply6 add constraint mp_reply6_bno foreign key(bno)
 references insa(bno);
 
@@ -218,4 +220,22 @@ drop table mp_b;
 insert into news(bno, title, content, writer)
 select news_seq.nextval, title, content, writer from news;
 commit
+
+create table mp_reply4 (
+    bno number not null,
+    rno number not null,
+    content varchar2(1000) not null,
+    writer varchar2(50) not null,
+    regdate date default sysdate,
+    primary key(bno, rno)
+);
+
+alter table mp_reply4 add constraint mp_reply4_bno foreign key(bno)
+references MP_cell(bno) on delete cascade;
+
+create sequence mp_reply4_seq START WITH 1 MINVALUE 0;
+
+commit
+
+select constraint_name, table_name, r_constraint_name from user_constraints where constraint_name = '{SCOTT5.MP_REPLY6_BNO}'
 

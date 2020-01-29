@@ -9,12 +9,12 @@
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
 	 	
 	 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-     <link href="https://fonts.googleapis.com/css?family=Sunflower:300&display=swap&subset=korean" rel="stylesheet"> 
+     <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet"> 
 	<link rel="icon" type="image/png" href="resources/images/icons/brand.ico" />
 	 	<title>자유게시판</title>
 	<style>
 	div{
-	font-family: 'Sunflower', sans-serif;
+	font-family: 'Noto Sans KR', sans-serif;
 	}
 	</style>
 	</head>
@@ -65,8 +65,8 @@
 						</tbody>			
 					</table>
 					<div>
-						<button type="submit" class="update_btn">저장</button>
-						<button type="button" class="cancel_btn">취소</button>
+						<button type="submit" class="update_btn btn btn-default">저장</button>
+						<button type="button" class="cancel_btn btn btn-default">취소</button>
 					</div>
 				</form>
 			</section>

@@ -7,7 +7,7 @@ import blog.vo.reply.Reply3VO;
 
 
 public interface Reply3Service {
-	//댓글 조회
+	    //댓글 조회
 		public List<Reply3VO> readReply(int bno) throws Exception;
 		
 		//댓글 작성

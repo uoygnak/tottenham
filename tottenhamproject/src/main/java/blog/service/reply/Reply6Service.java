@@ -9,7 +9,7 @@ import blog.vo.reply.Reply6VO;
 
 
 public interface Reply6Service {
-	//댓글 조회
+	    //댓글 조회
 		public List<Reply6VO> readReply(int bno) throws Exception;
 		
 		//댓글 작성

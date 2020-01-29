@@ -14,28 +14,33 @@
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
 <script
 	src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<link
-	href="https://fonts.googleapis.com/css?family=Sunflower:300&display=swap&subset=korean"
-	rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
 <script src="/resources/js/Backstretch.js"></script>
+<script language="javascript">
+function pop(){
+window.open("/popup", "pop", "width=446,height=450,history=no,resizable=no,status=no,scrollbars=yes,menubar=no")
+}
+</script>
 <style>
 form {
-	font-family: 'Sunflower', sans-serif;
+	font-family: 'Noto Sans KR', sans-serif;
 	font-size: 20px;
 }
 
 table {
-	font-family: 'Sunflower', sans-serif;
+	font-family: 'Noto Sans KR', sans-serif;
 	font-size: 20px;
 }
 
 div {
-	font-family: 'Sunflower', sans-serif;
+	font-family: 'Noto Sans KR', sans-serif;
 }
+
+
 </style>
 </head>
-<%@include file="/WEB-INF/views/nav.jsp"%>
-<body>
+<%@include file="/WEB-INF/views/mainnav.jsp"%>
+<body onload="javascript:pop()">
 	<br>
 	<br>
 	<br>
@@ -44,10 +49,10 @@ div {
 		<script>
 		 $(function(){
              $.backstretch([
-                 "resources/img/background/배경1.jpg",
-                 "resources/img/background/배경2.jpeg", 
-                 "resources/img/background/배경3.jpeg"
-             ], {duration:2500, fade:750});            
+            	 "resources/img/background/main1.png",
+                 "resources/img/background/main2.png", 
+                 "resources/img/background/main3.png"
+             ], {duration:2500, fade:750 });            
          });
 </script>
 <br><br><br><br><br><br><br><br><br>

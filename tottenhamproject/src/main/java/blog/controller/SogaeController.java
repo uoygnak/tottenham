@@ -34,5 +34,10 @@ public class SogaeController {
 	public String home(Model model) throws Exception {
 		return "login";
 	}
+	
+	@RequestMapping(value = "/popup", method = RequestMethod.GET)
+	public String popup(Model model) throws Exception {
+		return "popup";
+	}
 
 }
